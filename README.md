@@ -41,8 +41,31 @@ The `Domain` module defines the business logic of the application. It is a modul
 `App` is the layer outside `Domain`. `App` crosses the boundaries of the layers to communicate with `Domain`. However, the **Dependency Rule** is never violated. Using `polymorphism`, `App` communicates with `Domain` using inherited class: classes that implement or extend the `Repositories` present in the `Domain` layer. Since `polymorphism` is used, the `Repositories` passed to `Domain` still adhere to the **Dependency Rule** since as far as `Domain` is concerned, they are abstract. The implementation is hidden behind the `polymorphism`.
 
 ##### Contents of App
-Since `App` is the presentation layer of the application, it is the most framework-dependent layer, as it contains the UI and the event handlers of the UI. For every page in the application, `App` defines at least 3 classes: a `Controller`, a `Presenter`, and a `View`.
-   * Redux 
+Since `App` is the presentation layer of the application, it is the most framework-dependent layer, as it contains the UI and the event handlers of the UI. For every page in the application, `App` defines at least 3 classes: a `Action`, a `Reducers`, and a `View`.
+* **ACTIONS**
+  * In a nutshell, actions are events. Actions send data from the application (user interactions, internal events such as API calls, and form submissions) to the store. The store gets information only from actions. Internal actions are simple JavaScript objects that have a type property (usually constant), describing the type of action and payload of information being sent to the store.
+
+```
+{
+    type: LOGIN_FORM_SUBMIT,
+    payload: {username: ‘alex’, password: ‘123456’}
+}
+```
+Actions are created with action creators. That sounds obvious, I know. They are just functions that return actions.
+
+```
+function authUser(form) {
+    return {
+        type: LOGIN_FORM_SUBMIT,
+        payload: form
+    }
+}
+```
+Calling actions anywhere in the app, then, is very easy. Use the dispatch method, like so:
+
+```
+dispatch(authUser(form));
+```
 * Extra
   * `Utility` classes (any commonly used functions like timestamp getters etc..)
   * `Constants` classes (`const` strings for convenience)
