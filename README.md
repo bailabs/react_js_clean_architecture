@@ -45,27 +45,50 @@ Since `App` is the presentation layer of the application, it is the most framewo
 * **ACTIONS**
   * In a nutshell, actions are events. Actions send data from the application (user interactions, internal events such as API calls, and form submissions) to the store. The store gets information only from actions. Internal actions are simple JavaScript objects that have a type property (usually constant), describing the type of action and payload of information being sent to the store.
 
-  ```
-  {
-      type: LOGIN_FORM_SUBMIT,
-      payload: {username: ‘alex’, password: ‘123456’}
-  }
-  ```
-  Actions are created with action creators. That sounds obvious, I know. They are just functions that return actions.
+    ```
+    {
+        type: LOGIN_FORM_SUBMIT,
+        payload: {username: ‘alex’, password: ‘123456’}
+    }
+    ```
+    Actions are created with action creators. That sounds obvious, I know. They are just functions that return actions.
 
-  ```
-  function authUser(form) {
-      return {
-          type: LOGIN_FORM_SUBMIT,
-          payload: form
-      }
-  }
-  ```
-  Calling actions anywhere in the app, then, is very easy. Use the dispatch method, like so:
+    ```
+    function authUser(form) {
+        return {
+            type: LOGIN_FORM_SUBMIT,
+            payload: form
+        }
+    }
+    ```
+    Calling actions anywhere in the app, then, is very easy. Use the dispatch method, like so:
 
-  ```
-  dispatch(authUser(form));
-  ```
+    ```
+    dispatch(authUser(form));
+    ```
+* **REDUCERS**
+
+  * We’ve already discussed what a reducer is in functional JavaScript. It’s based on the array reduce method, where it accepts a callback (reducer) and lets you get a single value out of multiple values, sums of integers, or an accumulation of streams of values. In Redux, reducers are functions (pure) that take the current state of the application and an action and then return a new state. Understanding how reducers work is important because they perform most of the work. Here is a very simple reducer that takes the current state and an action as arguments and then returns the next state:
+
+   ```
+   function handleAuth(state, action) {
+       return _.assign({}, state, {
+           auth: action.payload
+       });
+   }
+   ```
+   For more complex apps, using the combineReducers() utility provided by Redux is possible (indeed, recommended). It combines all of the reducers in the app into a single index reducer. Every reducer is responsible for its own part of the app’s state, and the state parameter is different for every reducer. The combineReducers() utility makes the file structure much easier to maintain.
+
+   If an object (state) changes only some values, Redux creates a new object, the values that didn’t change will refer to the old object and only new values will be created. That’s great for performance. To make it even more efficient you can add Immutable.js.
+
+   ```
+   const rootReducer = combineReducers({
+       handleAuth: handleAuth,
+       editProfile: editProfile,
+       changePassword: changePassword
+   });
+   ```
+
 * Extra
   * `Utility` classes (any commonly used functions like timestamp getters etc..)
   * `Constants` classes (`const` strings for convenience)
