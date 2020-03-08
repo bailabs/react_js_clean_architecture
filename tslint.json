@@ -1,0 +1,63 @@
+{
+  "extends": [
+    "tslint-etc",
+    "tslint:recommended",
+    "tslint-import-group-ordering",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "one-variable-per-declaration": false,
+    "ignore-bound-class-methods": false,
+    "member-ordering": false,
+    "ordered-imports": false,
+    "prefer-const": false,
+    "no-unused-declaration": true,
+    "object-literal-sort-keys": false,
+    "no-unused-expression": false,
+    "no-console": false,
+    "semicolon": [true, "never"],
+    "no-var-requires": false,
+    "import-group-ordering": {
+      "severity": "warning",
+      "options": {
+        "imports-groups": [
+          {
+            "name": "dependencies"
+          },
+          {
+            "name": "common"
+          },
+          {
+            "name": "product"
+          },
+          {
+            "name": "other"
+          }
+        ],
+        "matching-rules": [
+          {
+            "type": "project",
+            "matches": "^(common)",
+            "imports-group": "common"
+          },
+          {
+            "type": "project",
+            "matches": "^(product)",
+            "imports-group": "product"
+          },
+          {
+            "type": "dependencies",
+            "imports-group": "dependencies",
+            "disable-native-nodejs-modules": false,
+            "from-package.json": true
+          },
+          {
+            "type": "project",
+            "matches": ".*",
+            "imports-group": "other"
+          }
+        ]
+      }
+    }
+  }
+}
