@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
@@ -16,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "check": "yarn run prettier --write 'src/**/*.js' && eslint src/**/*.js --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,5 +44,10 @@
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
     "source-map-loader": "^0.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run check"
+    }
   }
 }
