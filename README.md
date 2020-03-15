@@ -3,6 +3,12 @@
 ## Overview
 A React JS boilerplate that makes it easy and intuitive to implement [Uncle Bob's Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in react js. This boilerplate provides basic structure that are designed according to the Clean Architecture.
 
+the concept is borrrowed to this wonderfull code.
+https://github.com/ShadyBoukhary/flutter_clean_architecture
+https://github.com/janithl/react-clean-arch
+
+Thanks to @ShadyBoukhary and @janithl 
+
 ## Flutter Clean Architecture Primer
 ### Introduction
 It is architecture based on the book and blog by Uncle Bob. It is a combination of concepts taken from the Onion Architecture and other architectures. The main focus of the architecture is separation of concerns and scalability. It consists of four main modules: `App`, `Domain`, `Data`, and `Device`.
