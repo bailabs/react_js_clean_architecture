@@ -6,6 +6,7 @@ A React JS boilerplate that makes it easy and intuitive to implement [Uncle Bob'
 The concept is borrrowed to this wonderfull code.
 
 https://github.com/ShadyBoukhary/flutter_clean_architecture
+
 https://github.com/janithl/react-clean-arch
 
 Thanks to @ShadyBoukhary and @janithl 
