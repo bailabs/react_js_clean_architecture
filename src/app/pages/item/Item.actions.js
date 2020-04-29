@@ -2,7 +2,7 @@ import { LIST_LOAD_REQUEST, LIST_LOAD_SUCCESS, LIST_LOAD_FAILURE } from "./Item.
 import { ItemServiceImpl } from "../../../domain/usecases/ItemService"
 import { ItemRepositoryImpl } from "../../../data/repositories/ItemRepositoryImpl"
 
-export const refreshList = async dispatch => {
+export const refreshList = async (dispatch) => {
     dispatch({ type: LIST_LOAD_REQUEST })
 
     try {
