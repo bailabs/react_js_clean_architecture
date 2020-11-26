@@ -1,5 +1,5 @@
-import { Item } from "../entities/Item";
+import { Item } from "../entities/Item"
 
 export interface ItemRepository {
-  GetItems(): Promise<Item[]>;
+    GetItems(): Promise<Item[]>
 }
