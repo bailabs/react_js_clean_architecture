@@ -10,10 +10,12 @@ import items from "./app/pages/item/Item.reducers"
 const reducers = combineReducers({ items })
 const store = createStore(reducers, applyMiddleware(thunk))
 
-const App = () => (
-    <Provider store={store}>
-        <ItemList />
-    </Provider>
-)
+const App = () => {
+    return (
+        <Provider store={store}>
+            <ItemList />
+        </Provider>
+    )
+}
 
 export default App
