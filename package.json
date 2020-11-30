@@ -17,7 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "checking": "yarn run prettier --write 'src/**/*.{js,jsx,ts}' && eslint src/**/*.{js,jsx,ts} --fix",
+    "checking": "yarn run prettier --write src/**/*.{js,jsx,ts} && eslint src/**/*.{js,jsx,ts} --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
