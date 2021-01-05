@@ -5,7 +5,7 @@ const initialState = {
     items: [],
 }
 
-function items(state = initialState, action = null) {
+function items(state = initialState, action: { type: string; payload: any }) {
     switch (action.type) {
         case LIST_LOAD_REQUEST:
             return {
@@ -30,5 +30,4 @@ function items(state = initialState, action = null) {
             return state
     }
 }
-
 export default items

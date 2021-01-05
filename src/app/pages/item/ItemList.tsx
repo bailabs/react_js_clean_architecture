@@ -1,15 +1,15 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { connect } from "react-redux"
-import { refreshList } from "./Item.actions"
+import { refreshList } from "../../redux/Item/Item.actions"
+import { ItemProps, Item } from "../../redux/Item/Item.types"
 
-const ItemList = ({ items, refreshList }) => {
+const ItemList = ({ items, refreshList }: ItemProps) => {
     console.log(items)
     return (
         <div>
             <button onClick={refreshList}>Refresh</button>
             <ul>
-                {items.map((item) => (
+                {items.map((item: Item) => (
                     <li key={item.id}>{item.name}</li>
                 ))}
             </ul>
@@ -17,20 +17,11 @@ const ItemList = ({ items, refreshList }) => {
     )
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
     items: state.items.items,
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: any) => ({
     refreshList: () => dispatch(refreshList),
 })
-ItemList.propTypes = {
-    items: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number,
-            name: PropTypes.string,
-        }),
-    ),
-    refreshList: PropTypes.func,
-}
 export default connect(mapStateToProps, mapDispatchToProps)(ItemList)
