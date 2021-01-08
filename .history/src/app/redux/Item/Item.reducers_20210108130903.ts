@@ -21,7 +21,6 @@ function items(state = initialState, action: { type: string; payload: RefreshIte
             }
 
         case LIST_LOAD_SUCCESS:
-            console.log(typeof action.payload)
             return {
                 ...state,
                 items: action.payload,

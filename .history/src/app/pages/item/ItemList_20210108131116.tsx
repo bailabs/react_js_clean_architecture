@@ -5,7 +5,8 @@ import { ItemProps, Item } from "../../redux/Item/Item.types"
 
 interface RootState {
     items: any
-}
+  }
+  
 const ItemList = ({ items }: ItemProps) => {
     const dispatch = useDispatch()
     const handleClick = () => {
@@ -23,11 +24,8 @@ const ItemList = ({ items }: ItemProps) => {
     )
 }
 
-const mapStateToProps = (state: RootState) => {
-    console.log(state.items)
-    return {
-        items: state.items.items,
-    }
-}
+const mapStateToProps = (state: RootState) => ({
+    items: state.items.items,
+})
 
 export default connect(mapStateToProps)(ItemList)

@@ -9,8 +9,8 @@ export type ItemProps = {
 
 export type ItemActionType = RefreshItemListSuccess
 
-export interface RefreshItemListSuccess {
-    type: typeof LIST_LOAD_SUCCESS
+export type RefreshItemListSuccess {
+    type: typeof LIST_LOAD_SUCCESS,
     payload: Item[]
 }
 

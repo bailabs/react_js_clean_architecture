@@ -24,10 +24,9 @@ const ItemList = ({ items }: ItemProps) => {
 }
 
 const mapStateToProps = (state: RootState) => {
-    console.log(state.items)
-    return {
-        items: state.items.items,
-    }
-}
+    console.log(state)
+return({
+    items: state.items.items,
+})}
 
 export default connect(mapStateToProps)(ItemList)

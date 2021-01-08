@@ -4,14 +4,6 @@ export const LIST_LOAD_FAILURE = "LIST_LOAD_FAILURE"
 
 export type ItemProps = {
     items: Item[]
-    refreshList: () => Item[]
-}
-
-export type ItemActionType = RefreshItemListSuccess
-
-export interface RefreshItemListSuccess {
-    type: typeof LIST_LOAD_SUCCESS
-    payload: Item[]
 }
 
 export interface Item {

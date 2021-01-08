@@ -24,7 +24,7 @@ const ItemList = ({ items }: ItemProps) => {
 }
 
 const mapStateToProps = (state: RootState) => {
-    console.log(state.items)
+
     return {
         items: state.items.items,
     }

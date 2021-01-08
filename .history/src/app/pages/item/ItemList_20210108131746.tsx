@@ -1,10 +1,10 @@
 import React from "react"
 import { connect, useDispatch } from "react-redux"
 import { refreshList } from "../../redux/Item/Item.actions"
-import { ItemProps, Item } from "../../redux/Item/Item.types"
+import { ItemProps, Item, RefreshItemListSuccess } from "../../redux/Item/Item.types"
 
 interface RootState {
-    items: any
+    items: RefreshItemListSuccess
 }
 const ItemList = ({ items }: ItemProps) => {
     const dispatch = useDispatch()
@@ -24,7 +24,7 @@ const ItemList = ({ items }: ItemProps) => {
 }
 
 const mapStateToProps = (state: RootState) => {
-    console.log(state.items)
+    console.log(typeof state.items.items)
     return {
         items: state.items.items,
     }

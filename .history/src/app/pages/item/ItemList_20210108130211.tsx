@@ -3,13 +3,10 @@ import { connect, useDispatch } from "react-redux"
 import { refreshList } from "../../redux/Item/Item.actions"
 import { ItemProps, Item } from "../../redux/Item/Item.types"
 
-interface RootState {
-    items: any
-}
 const ItemList = ({ items }: ItemProps) => {
     const dispatch = useDispatch()
     const handleClick = () => {
-        dispatch(refreshList)
+        dispatch(refreshList);
     }
     return (
         <div>
@@ -23,11 +20,8 @@ const ItemList = ({ items }: ItemProps) => {
     )
 }
 
-const mapStateToProps = (state: RootState) => {
-    console.log(state.items)
-    return {
-        items: state.items.items,
-    }
-}
+const mapStateToProps = (state: any) => ({
+    items: state.items.items,
+})
 
 export default connect(mapStateToProps)(ItemList)

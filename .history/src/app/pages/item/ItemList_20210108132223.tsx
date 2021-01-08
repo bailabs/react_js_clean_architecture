@@ -4,9 +4,10 @@ import { refreshList } from "../../redux/Item/Item.actions"
 import { ItemProps, Item } from "../../redux/Item/Item.types"
 
 interface RootState {
-    items: any
+    itemList: []
 }
 const ItemList = ({ items }: ItemProps) => {
+
     const dispatch = useDispatch()
     const handleClick = () => {
         dispatch(refreshList)
@@ -14,19 +15,19 @@ const ItemList = ({ items }: ItemProps) => {
     return (
         <div>
             <button onClick={handleClick}>Refresh</button>
-            <ul>
+            {/* <ul>
                 {items.map((item: Item) => (
                     <li key={item.id}>{item.name}</li>
                 ))}
-            </ul>
+            </ul> */}
         </div>
     )
 }
 
 const mapStateToProps = (state: RootState) => {
-    console.log(state.items)
+    console.log(typeof state.itemList)
     return {
-        items: state.items.items,
+        items: state.itemList,
     }
 }
 

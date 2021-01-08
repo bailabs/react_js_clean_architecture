@@ -4,7 +4,7 @@ import { refreshList } from "../../redux/Item/Item.actions"
 import { ItemProps, Item } from "../../redux/Item/Item.types"
 
 interface RootState {
-    items: any
+    items: string
 }
 const ItemList = ({ items }: ItemProps) => {
     const dispatch = useDispatch()
@@ -24,7 +24,6 @@ const ItemList = ({ items }: ItemProps) => {
 }
 
 const mapStateToProps = (state: RootState) => {
-    console.log(state.items)
     return {
         items: state.items.items,
     }
