@@ -7,6 +7,13 @@ export type ItemProps = {
     refreshList: () => Item[]
 }
 
+export type ItemActionType = RefreshItemListSuccess
+
+export interface RefreshItemListSuccess {
+    type: typeof LIST_LOAD_SUCCESS
+    payload: Item[]
+}
+
 export interface Item {
     id: number
     name: string
