@@ -1,5 +1,5 @@
-import { Item } from "../entities/Item"
-import { ItemRepository } from "../repositories/ItemRepository"
+import { Item } from "@domain/entities/Item"
+import { ItemRepository } from "@domain/repositories/ItemRepository"
 
 export interface ItemService {
     GetItems(): Promise<Item[]>

@@ -1,5 +1,5 @@
-import { Item } from "../../domain/entities/Item"
-import { ItemRepository } from "../../domain/repositories/ItemRepository"
+import { Item } from "@domain/entities/Item"
+import { ItemRepository } from "@domain/repositories/ItemRepository"
 
 class ItemDTO {
     id = 0
