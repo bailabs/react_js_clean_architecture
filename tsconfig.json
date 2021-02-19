@@ -1,11 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
-    "paths": {
-      "@app/*": ["app/*"],
-      "@data/*": ["data/*"],
-      "@domain/*": ["domain/*"],
-    },
     "outDir": "./dist/",
     "sourceMap": true,
     "strictNullChecks": true,

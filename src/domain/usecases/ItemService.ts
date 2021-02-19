@@ -1,18 +1,18 @@
-import { Item } from "@domain/entities/Item"
-import { ItemRepository } from "@domain/repositories/ItemRepository"
+import { Item } from "domain/entities/Item"
+import { ItemRepository } from "domain/repositories/ItemRepository"
 
 export interface ItemService {
-    GetItems(): Promise<Item[]>
+    getItems(): Promise<Item[]>
 }
 
 export class ItemServiceImpl implements ItemService {
-    itemRepo: ItemRepository
+    repo: ItemRepository
 
-    constructor(ir: ItemRepository) {
-        this.itemRepo = ir
+    constructor(repo: ItemRepository) {
+        this.repo = repo
     }
 
-    async GetItems(): Promise<Item[]> {
-        return this.itemRepo.GetItems()
+    async getItems(): Promise<Item[]> {
+        return this.repo.getItems()
     }
 }
