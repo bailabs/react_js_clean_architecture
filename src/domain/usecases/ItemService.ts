@@ -1,11 +1,7 @@
 import { Item } from "../entities/Item"
 import { ItemRepository } from "../repositories/ItemRepository"
 
-export interface ItemService {
-    GetItems(): Promise<Item[]>
-}
-
-export class ItemServiceImpl implements ItemService {
+export class ItemServiceImpl {
     itemRepo: ItemRepository
 
     constructor(ir: ItemRepository) {
