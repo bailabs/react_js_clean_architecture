@@ -1,21 +1,21 @@
 import React from "react"
-import { connect, useDispatch } from "react-redux"
-import { refreshList } from "../../redux/Item/Item.actions"
-import { ItemProps, Item } from "../../redux/Item/Item.types"
+import { useAppDispatch, useAppSelector } from "../../redux/hooks"
+import { fetchList } from "../../redux/Item/Item.slice"
 
-interface RootState {
-    items: any
-}
-const ItemList = ({ items }: ItemProps) => {
-    const dispatch = useDispatch()
+const ItemList = () => {
+    const items = useAppSelector((state) => state.items.items)
+    const loading = useAppSelector((state) => state.items.loading)
+    const dispatch = useAppDispatch()
     const handleClick = () => {
-        dispatch(refreshList)
+        dispatch(fetchList())
     }
     return (
         <div>
-            <button onClick={handleClick}>Refresh</button>
+            <button onClick={handleClick} disabled={loading}>
+                Refresh
+            </button>
             <ul>
-                {items.map((item: Item) => (
+                {items.map((item) => (
                     <li key={item.id}>{item.name}</li>
                 ))}
             </ul>
@@ -23,11 +23,4 @@ const ItemList = ({ items }: ItemProps) => {
     )
 }
 
-const mapStateToProps = (state: RootState) => {
-    console.log(state.items)
-    return {
-        items: state.items.items,
-    }
-}
-
-export default connect(mapStateToProps)(ItemList)
+export default ItemList

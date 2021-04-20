@@ -4,7 +4,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "prettier/@typescript-eslint",
         "plugin:prettier/recommended",
-        "plugin:react/recommended",
+        // "plugin:react/recommended",
     ],
     parserOptions: {
         ecmaVersion: 2018,
@@ -22,7 +22,7 @@ module.exports = {
             {
                 endOfLine: "auto",
             },
-            { usePrettierrc: true },
+            // { usePrettierrc: true },
         ],
     },
     settings: {

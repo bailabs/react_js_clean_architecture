@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.1",
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.3",
     "react": "^17.0.1",
@@ -37,7 +38,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
+    "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.15",
     "@types/react-router-dom": "^5.1.7",
