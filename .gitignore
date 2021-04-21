@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+/src/app/.next
+/.idea
+/.idea/
+./.idea/
+./.idea
 .idea
 # testing
 /coverage
@@ -33,8 +38,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-/.idea
-/.idea/
-./.idea/
-./.idea
