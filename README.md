@@ -11,6 +11,14 @@ https://github.com/janithl/react-clean-arch
 
 Thanks to @ShadyBoukhary and @janithl
 
+## Getting Started
+
+```
+    git clone https://github.com/bailabs/react_js_clean_architecture.git
+    yarn install
+    yarn run dev
+```
+
 ## Flutter Clean Architecture Primer
 ### Introduction
 It is architecture based on the book and blog by Uncle Bob. It is a combination of concepts taken from the Onion Architecture and other architectures. The main focus of the architecture is separation of concerns and scalability. It consists of four main modules: `App`, `Domain`, `Data`, and `Device`.
