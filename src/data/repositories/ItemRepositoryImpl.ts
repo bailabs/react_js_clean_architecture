@@ -1,11 +1,5 @@
-import { Item } from "../../domain/entities/Item"
+import Item from "../../domain/entities/Item"
 import { ItemRepository } from "../../domain/repositories/ItemRepository"
-
-class ItemDTO {
-    id = 0
-
-    name = ""
-}
 
 export default class ItemRepositoryImpl implements ItemRepository {
     jsonUrl =
@@ -14,6 +8,6 @@ export default class ItemRepositoryImpl implements ItemRepository {
     async GetItems(): Promise<Item[]> {
         const res = await fetch(this.jsonUrl)
         const jsonData = await res.json()
-        return jsonData.map((item: ItemDTO) => ({ id: item.id, name: item.name }))
+        return jsonData.map((item: Item) => ({ id: item.id, name: item.name }))
     }
 }
