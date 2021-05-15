@@ -3,6 +3,7 @@ import { ItemRepository } from "../../domain/repositories/ItemRepository"
 
 class ItemDTO {
     id = 0
+
     name = ""
 }
 
