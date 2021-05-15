@@ -1,7 +1,7 @@
 import { Item } from "../entities/Item"
 import { ItemRepository } from "../repositories/ItemRepository"
 
-export class ItemServiceImpl {
+export default class ItemServiceImpl {
     itemRepo: ItemRepository
 
     constructor(ir: ItemRepository) {

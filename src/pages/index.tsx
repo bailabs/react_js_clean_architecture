@@ -1,8 +1,5 @@
-import Head from "next/head"
-
 import { useAppDispatch, useAppSelector } from "../app/redux/hooks"
 import { fetchList } from "../app/redux/item/item.slice"
-import styles from "../styles/Home.module.css"
 
 export default function Home() {
     const items = useAppSelector((state) => state.items.items)

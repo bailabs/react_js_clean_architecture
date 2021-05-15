@@ -1,4 +1,4 @@
-import { createAsyncThunk,createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 import { ItemRepositoryImpl } from "../../../data/repositories/ItemRepositoryImpl"
 import { Item } from "../../../domain/entities/Item"
@@ -20,7 +20,6 @@ export const fetchList = createAsyncThunk("itemList/fetchList", async () => {
     const itemRepo = new ItemRepositoryImpl()
     const itemService = new ItemServiceImpl(itemRepo)
     const items = await itemService.GetItems()
-    console.log(items)
     return items
 })
 export const itemSlice = createSlice({
@@ -30,18 +29,18 @@ export const itemSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchList.fulfilled, (state, action) => ({
-                ...state,
-                items: action.payload,
-                loading: false,
-            }))
+            ...state,
+            items: action.payload,
+            loading: false,
+        }))
         builder.addCase(fetchList.pending, (state) => ({
-                ...state,
-                loading: true,
-            }))
+            ...state,
+            loading: true,
+        }))
         builder.addCase(fetchList.rejected, (state) => ({
-                ...state,
-                loading: false,
-            }))
+            ...state,
+            loading: false,
+        }))
     },
 })
 
