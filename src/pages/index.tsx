@@ -10,7 +10,7 @@ export default function Home() {
     }
     return (
         <div>
-            <button onClick={handleClick} disabled={loading}>
+            <button type="button" onClick={handleClick} disabled={loading}>
                 Refresh
             </button>
             <ul>
