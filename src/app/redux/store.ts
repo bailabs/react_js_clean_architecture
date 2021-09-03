@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit"
 
-import { itemSlice } from "./item/item.slice"
+import counterSlice from "./counter/counter.slice"
+import plantSlice from "./plant/plant.slice"
 
 export const store = configureStore({
     reducer: {
-        items: itemSlice.reducer,
+        plantSlice,
+        counterSlice,
     },
 })
 

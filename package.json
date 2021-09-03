@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "prettier --write src/.  && eslint src --ext .tsx,.ts,.js,.jsx --fix",
-    "remove_console": "./consoleaway.sh -r src/",
+    "lint": "prettier --write src/.  && eslint src --ext .tsx,.ts,.js,.jsx --fix && yarn run remove_console",
+    "remove_console": ".\\consoleaway.sh -r src/",
     "deploy": "yarn run remove_console && yarn run lint && vercel deploy --prod"
   },
   "dependencies": {
