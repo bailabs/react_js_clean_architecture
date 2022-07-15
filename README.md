@@ -15,8 +15,9 @@ Thanks to @ShadyBoukhary and @janithl
 
 ```
     git clone https://github.com/bailabs/react_js_clean_architecture.git
-    yarn install
-    yarn run dev
+    cd react_js_clean_architecture
+    yarn install // or npm install
+    yarn run dev // or npm yarn run dev
 ```
 
 ## Flutter Clean Architecture Primer
